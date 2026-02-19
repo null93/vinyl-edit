@@ -1,0 +1,6 @@
+===
+replace --bogus vcl vvv
+===
+vcl 4.1;
+===
+Unknown option: --bogus

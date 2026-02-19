@@ -1,0 +1,6 @@
+===
+insert 'import std;' extra
+===
+vcl 4.1;
+===
+Unknown option: extra

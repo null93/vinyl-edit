@@ -1,0 +1,7 @@
+===
+pipe:format
+===
+vcl 4.1;
+acl purge {"127.0.0.1";}
+===
+syntax error: unparseable content: {"127.0.0.1";}

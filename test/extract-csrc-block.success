@@ -1,0 +1,9 @@
+===
+pipe:extract 'C{ void foo(void); }C'
+===
+vcl 4.1;
+C{ void foo(void); }C
+sub vcl_recv {
+}
+===
+C{ void foo(void); }C

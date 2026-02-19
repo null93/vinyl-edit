@@ -1,0 +1,15 @@
+===
+replace vcl ccc
+===
+vcl 4.1;
+backend default {
+    .host = "127.0.0.1";
+}
+$$$
+# test
+===
+ccc 4.1;
+
+backend default {
+    .host = "127.0.0.1";
+}

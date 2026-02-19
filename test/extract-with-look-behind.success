@@ -1,0 +1,12 @@
+===
+extract '.host = **' --look-behind 'backend other {'
+===
+vcl 4.1;
+backend default {
+    .host = "127.0.0.1";
+}
+backend other {
+    .host = "10.0.0.1";
+}
+===
+.host = "10.0.0.1"

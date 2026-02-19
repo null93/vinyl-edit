@@ -1,0 +1,6 @@
+===
+replace vcl vvv --limit
+===
+vcl 4.1;
+===
+--limit requires a value

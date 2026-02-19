@@ -1,0 +1,11 @@
+===
+extract 'acl ** {***}'
+===
+vcl 4.1;
+acl purge {
+/* {{ ips }} */
+}
+===
+acl purge {
+/* {{ ips }} */
+}

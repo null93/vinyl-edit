@@ -1,0 +1,30 @@
+===
+insert '.first_byte_timeout = 600s;' --look-behind '.host=**;' --look-ahead '.port=**;'
+===
+vcl 4.1;
+
+backend default {
+    .host = "127.0.0.1";
+    .port = "8080";
+}
+
+sub vcl_recv {
+    if (req.url ~ "^/api/") {
+        set req.http.X-API = "true";
+    }
+}
+===
+vcl 4.1;
+
+backend default {
+    .host = "127.0.0.1";
+    .first_byte_timeout = 600s;
+    .port = "8080";
+}
+
+sub vcl_recv {
+    if (req.url ~ "^/api/") {
+        set req.http.X-API = "true";
+    }
+}
+

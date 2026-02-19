@@ -1,0 +1,8 @@
+===
+extract '# nonexistent comment'
+===
+vcl 4.1;
+# actual comment
+sub vcl_recv {
+}
+===

@@ -1,0 +1,28 @@
+===
+replace 'acl **{***}' 'acl **1 {"127.0.0.1";}'
+===
+vcl 4.1;
+
+acl purgers {
+    "127.0.0.1";
+    "localhost";
+    "::1";
+}
+
+sub vcl_recv {
+    if (req.url ~ "^/api/") {
+        set req.http.X-API = "true";
+    }
+}
+===
+vcl 4.1;
+
+acl purgers {
+    "127.0.0.1";
+}
+
+sub vcl_recv {
+    if (req.url ~ "^/api/") {
+        set req.http.X-API = "true";
+    }
+}

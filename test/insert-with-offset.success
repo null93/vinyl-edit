@@ -1,0 +1,22 @@
+===
+insert '.port = "80";' --look-behind '.host = **;' --limit 1 --offset 1
+===
+vcl 4.1;
+backend a { .host = "1.1.1.1"; }
+backend b { .host = "2.2.2.2"; }
+backend c { .host = "3.3.3.3"; }
+===
+vcl 4.1;
+
+backend a {
+    .host = "1.1.1.1";
+}
+
+backend b {
+    .host = "2.2.2.2";
+    .port = "80";
+}
+
+backend c {
+    .host = "3.3.3.3";
+}

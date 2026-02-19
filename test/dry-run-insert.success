@@ -1,0 +1,18 @@
+===
+pipe:insert 'import std;' --look-behind 'vcl **;' --dry-run --no-color
+===
+vcl 4.1;
+backend default {
+    .host = "127.0.0.1";
+}
+===
+--- a/stdin
++++ b/stdin
+@@ -1,4 +1,7 @@
+ vcl 4.1;
++
++import std;
++
+ backend default {
+     .host = "127.0.0.1";
+ }

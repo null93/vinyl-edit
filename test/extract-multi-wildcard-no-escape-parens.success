@@ -1,0 +1,14 @@
+===
+extract '(***"target"***)'
+===
+vcl 4.1;
+sub vcl_recv {
+    if (req.method == "GET") {
+        return (pass);
+    }
+    if (req.url ~ "target" || req.url ~ "other") {
+        return (hash);
+    }
+}
+===
+(req.url ~ "target" || req.url ~ "other")

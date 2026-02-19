@@ -1,0 +1,11 @@
+===
+extract '.host = **' '**1' --limit 2 --offset 1
+===
+vcl 4.1;
+backend a { .host = "1.1.1.1"; }
+backend b { .host = "2.2.2.2"; }
+backend c { .host = "3.3.3.3"; }
+backend d { .host = "4.4.4.4"; }
+===
+"2.2.2.2"
+"3.3.3.3"

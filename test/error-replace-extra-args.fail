@@ -1,0 +1,6 @@
+===
+replace vcl vvv extra
+===
+vcl 4.1;
+===
+Unknown option: extra

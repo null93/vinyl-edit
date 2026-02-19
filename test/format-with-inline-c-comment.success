@@ -1,0 +1,14 @@
+===
+format
+===
+vcl 4.1;
+backend default {
+    .host = /* the host */ "127.0.0.1";
+}
+===
+vcl 4.1;
+
+backend default {
+    .host = /* the host */
+    "127.0.0.1";
+}

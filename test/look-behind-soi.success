@@ -1,0 +1,24 @@
+===
+replace '4.1' '4.0' --look-behind 'SOI vcl'
+===
+vcl 4.1;
+
+backend default {
+    .host = "127.0.0.1";
+    .port = "8080";
+}
+
+sub vcl_recv {
+    set req.http.X-Ver = 4.1;
+}
+===
+vcl 4.0;
+
+backend default {
+    .host = "127.0.0.1";
+    .port = "8080";
+}
+
+sub vcl_recv {
+    set req.http.X-Ver = 4.1;
+}

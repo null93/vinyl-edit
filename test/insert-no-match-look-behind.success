@@ -1,0 +1,13 @@
+===
+insert 'import std;' --look-behind 'sub vcl_recv {' --look-ahead 'return'
+===
+vcl 4.1;
+backend default {
+    .host = "127.0.0.1";
+}
+===
+vcl 4.1;
+
+backend default {
+    .host = "127.0.0.1";
+}

@@ -1,0 +1,30 @@
+===
+tokens --processed
+===
+vcl 4.1;
+# hash comment
+// slash comment
+/* c block comment */
+backend default {
+    .host = "127.0.0.1";
+}
+===
+TYPE         VALUE
+----         -----
+SOI          SOI
+ID           vcl
+FNUM         4.1
+';'          ;
+COMMENT      # hash comment
+COMMENT      // slash comment
+COMMENT      /* c block comment */
+ID           backend
+ID           default
+'{'          {
+'.'          .
+ID           host
+'='          =
+CSTR         "127.0.0.1"
+';'          ;
+'}'          }
+EOI          EOI

@@ -1,0 +1,3 @@
+[submodule "vinyl-cache"]
+	path = lib/vinyl-cache
+	url = https://code.vinyl-cache.org/vinyl-cache/vinyl-cache

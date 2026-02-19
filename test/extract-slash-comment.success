@@ -1,0 +1,9 @@
+===
+extract '// slash comment'
+===
+vcl 4.1;
+// slash comment
+sub vcl_recv {
+}
+===
+// slash comment

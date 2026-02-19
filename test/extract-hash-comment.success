@@ -1,0 +1,9 @@
+===
+extract '# To use the X-Pool header'
+===
+vcl 4.1;
+# To use the X-Pool header
+sub vcl_recv {
+}
+===
+# To use the X-Pool header

@@ -1,0 +1,6 @@
+===
+replace --look-behind
+===
+vcl 4.1;
+===
+--look-behind requires a value

@@ -1,0 +1,27 @@
+===
+pipe:replace '.host = **' '.host = "replaced"'
+===
+vcl 4.1;
+backend one {
+    .host = "1.1.1.1";
+}
+backend two {
+    .host = "2.2.2.2";
+}
+backend three {
+    .host = "3.3.3.3";
+}
+===
+vcl 4.1;
+
+backend one {
+    .host = "replaced";
+}
+
+backend two {
+    .host = "replaced";
+}
+
+backend three {
+    .host = "replaced";
+}

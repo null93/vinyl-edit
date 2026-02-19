@@ -1,0 +1,6 @@
+===
+insert 'import std;' --look-ahead
+===
+vcl 4.1;
+===
+--look-ahead requires a value

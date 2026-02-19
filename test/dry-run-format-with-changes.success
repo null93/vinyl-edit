@@ -1,0 +1,21 @@
+===
+format --dry-run --no-color
+===
+vcl 4.1;
+
+backend default {
+.host = "127.0.0.1";
+.port = "8080";
+}
+===
+--- a/FILE
++++ b/FILE
+@@ -1,6 +1,6 @@
+ vcl 4.1;
+ 
+ backend default {
+-.host = "127.0.0.1";
+-.port = "8080";
++    .host = "127.0.0.1";
++    .port = "8080";
+ }

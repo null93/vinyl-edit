@@ -1,0 +1,28 @@
+===
+replace '4.1' '6.0' --look-behind 'vcl' --look-ahead ';'
+===
+vcl 4.1;
+
+backend default {
+    .host = "127.0.0.1";
+    .port = "8080";
+}
+
+sub vcl_recv {
+    if (req.url ~ "^/api/") {
+        set req.http.X-API = "true";
+    }
+}
+===
+vcl 6.0;
+
+backend default {
+    .host = "127.0.0.1";
+    .port = "8080";
+}
+
+sub vcl_recv {
+    if (req.url ~ "^/api/") {
+        set req.http.X-API = "true";
+    }
+}

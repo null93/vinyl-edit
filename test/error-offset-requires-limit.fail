@@ -1,0 +1,6 @@
+===
+extract '.host = **' --offset 1
+===
+vcl 4.1;
+===
+--offset requires --limit

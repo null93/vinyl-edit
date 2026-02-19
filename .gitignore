@@ -1,0 +1,9 @@
+# Files
+
+.claude
+.DS_Store
+
+# Directories
+
+dist
+private

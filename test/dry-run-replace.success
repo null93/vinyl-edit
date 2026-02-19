@@ -1,0 +1,17 @@
+===
+pipe:replace vcl vvv --dry-run --no-color
+===
+vcl 4.1;
+backend default {
+    .host = "127.0.0.1";
+}
+===
+--- a/stdin
++++ b/stdin
+@@ -1,4 +1,5 @@
+-vcl 4.1;
++vvv 4.1;
++
+ backend default {
+     .host = "127.0.0.1";
+ }

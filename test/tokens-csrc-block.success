@@ -1,0 +1,12 @@
+===
+tokens
+===
+vcl 4.1;
+C{ void foo(void); }C
+===
+TYPE         VALUE
+----         -----
+ID           vcl
+FNUM         4.1
+';'          ;
+CSRC         C{ void foo(void); }C

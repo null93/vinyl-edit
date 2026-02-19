@@ -1,0 +1,33 @@
+===
+insert --look-behind } --look-ahead sub 'backend test_acl { .host = "127.0.0.1"; .port = "8080"; }'
+===
+vcl 4.1;
+
+backend default {
+    .host = "127.0.0.1";
+    .port = "8080";
+}
+
+sub vcl_recv {
+    if (req.url ~ "^/api/") {
+        set req.http.X-API = "true";
+    }
+}
+===
+vcl 4.1;
+
+backend default {
+    .host = "127.0.0.1";
+    .port = "8080";
+}
+
+backend test_acl {
+    .host = "127.0.0.1";
+    .port = "8080";
+}
+
+sub vcl_recv {
+    if (req.url ~ "^/api/") {
+        set req.http.X-API = "true";
+    }
+}

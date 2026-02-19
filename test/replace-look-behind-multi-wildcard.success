@@ -1,0 +1,14 @@
+===
+replace '.probe = {***}' '' --look-behind '***'
+===
+vcl 4.1;
+backend default {
+    .host = "127.0.0.1";
+    .probe = { .url = "/health"; }
+}
+===
+vcl 4.1;
+
+backend default {
+    .host = "127.0.0.1";
+}

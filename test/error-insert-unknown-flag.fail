@@ -1,0 +1,6 @@
+===
+insert 'import std;' --bogus
+===
+vcl 4.1;
+===
+Unknown option: --bogus

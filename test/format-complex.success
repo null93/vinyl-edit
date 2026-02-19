@@ -1,0 +1,38 @@
+===
+format
+===
+vcl 4.1;
+acl purge { "127.0.0.1"; "::1"; }
+backend default { .host = "127.0.0.1"; .port = "8080"; .probe = { .url = "/health"; .timeout = 2s; .interval = 5s; } }
+sub vcl_recv { if (req.url ~ "^/api/") { set req.http.X-API = "true"; } if (req.method == "PURGE") { return (purge); } }
+sub vcl_backend_response { set beresp.ttl = 1h; }
+===
+vcl 4.1;
+
+acl purge {
+    "127.0.0.1";
+    "::1";
+}
+
+backend default {
+    .host = "127.0.0.1";
+    .port = "8080";
+    .probe = {
+        .url = "/health";
+        .timeout = 2s;
+        .interval = 5s;
+    }
+}
+
+sub vcl_recv {
+    if (req.url ~ "^/api/") {
+        set req.http.X-API = "true";
+    }
+    if (req.method == "PURGE") {
+        return (purge);
+    }
+}
+
+sub vcl_backend_response {
+    set beresp.ttl = 1h;
+}

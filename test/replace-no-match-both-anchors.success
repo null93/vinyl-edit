@@ -1,0 +1,13 @@
+===
+replace --look-behind SOI --look-ahead EOI backend server
+===
+vcl 4.1;
+backend default {
+    .host = "127.0.0.1";
+}
+===
+vcl 4.1;
+
+backend default {
+    .host = "127.0.0.1";
+}

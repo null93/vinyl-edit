@@ -1,0 +1,18 @@
+===
+replace 'if (***) {***}' 'if (req.url ~ "/new") { return (pass); }'
+===
+vcl 4.1;
+
+sub vcl_recv {
+    if ((req.url ~ "^/api/") || (req.url ~ "^/health/")) {
+        set req.http.X-API = "true";
+    }
+}
+===
+vcl 4.1;
+
+sub vcl_recv {
+    if (req.url ~ "/new") {
+        return (pass);
+    }
+}

@@ -1,0 +1,16 @@
+===
+pipe:replace 'C{ void foo(void); }C' 'C{ void bar(void); }C'
+===
+vcl 4.1;
+C{ void foo(void); }C
+backend default {
+    .host = "127.0.0.1";
+}
+===
+vcl 4.1;
+
+C{ void bar(void); }C
+
+backend default {
+    .host = "127.0.0.1";
+}

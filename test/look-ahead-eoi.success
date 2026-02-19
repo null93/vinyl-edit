@@ -1,0 +1,22 @@
+===
+replace 'return ( pass ) ;' 'return ( synth ( 200 ) ) ;' --look-ahead '} EOI'
+===
+vcl 4.1;
+
+sub vcl_recv {
+    return (pass);
+}
+
+sub vcl_backend_response {
+    return (pass);
+}
+===
+vcl 4.1;
+
+sub vcl_recv {
+    return (pass);
+}
+
+sub vcl_backend_response {
+    return (synth (200));
+}

@@ -1,0 +1,15 @@
+===
+extract 'synth(***)'
+===
+vcl 4.1;
+sub vcl_recv {
+    if (req.url ~ "^/api/") {
+        return (synth(200, "OK"));
+    }
+    if (req.url ~ "^/health") {
+        return (synth(204, "No Content"));
+    }
+}
+===
+synth(200, "OK")
+synth(204, "No Content")

@@ -1,0 +1,15 @@
+===
+pipe:insert 'import std;' --look-behind SOI
+===
+vcl 4.1;
+backend default {
+    .host = "127.0.0.1";
+}
+===
+import std;
+
+vcl 4.1;
+
+backend default {
+    .host = "127.0.0.1";
+}

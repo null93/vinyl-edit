@@ -1,0 +1,6 @@
+===
+extract
+===
+vcl 4.1;
+===
+extract requires a pattern
