@@ -124,10 +124,10 @@ In `extract`, captures work the same way via the template argument. Running `ext
 
 ## Install
 
-**macOS (Apple Silicon):**
+**macOS (ARM64):**
 ```sh
-curl -sLo /usr/local/bin/vinyl-edit https://github.com/null93/vinyl-edit/releases/download/0.0.1/vinyl-edit_0.0.0_darwin_arm64
-chmod +x /usr/local/bin/vinyl-edit
+brew tap null93/tap
+brew install vinyl-edit
 ```
 
 **Linux (ARM64):**
