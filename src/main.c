@@ -10,6 +10,10 @@
 #include "libvcc.h"
 #include "edit.h"
 
+#ifndef VINYL_EDIT_VERSION
+#define VINYL_EDIT_VERSION "unknown"
+#endif
+
 static int parse_common_flag(
     int argc, char **argv, int *i, struct match_constraint *mc) {
 	if (strcmp(argv[*i], "--look-behind") == 0) {
@@ -195,6 +199,8 @@ static char *read_stdin(long *out_len) {
 
 static void usage(const char *progname) {
 	fprintf(stderr,
+		"%s (version %s)\n"
+		"\n"
 		"Usage: %s <command> <file> [flags] [args]\n"
 		"\n"
 		"Global Flags:\n"
@@ -272,8 +278,9 @@ static void usage(const char *progname) {
 		"\n"
 		"  # Extract the second backend block, skipping the first\n"
 		"  %s extract default.vcl 'backend ** {***}' --limit 1 --offset 1\n",
+		progname, VINYL_EDIT_VERSION, progname,
 		progname, progname, progname, progname, progname, progname,
-		progname, progname, progname, progname, progname, progname
+		progname, progname, progname, progname, progname
 	);
 }
 

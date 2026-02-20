@@ -25,7 +25,7 @@ SRCS = src/main.c src/edit.c src/buf.c src/pattern.c src/format.c
 
 build: $(SRCS) $(LIBVCC) $(LIBVARNISH)
 	@mkdir -p dist
-	cc -Wall -O2 $(INCLUDES) -o dist/$(OUTPUT) $(SRCS) $(LIBS)
+	cc -Wall -O2 -D VINYL_EDIT_VERSION=\"$(VERSION)\" $(INCLUDES) -o dist/$(OUTPUT) $(SRCS) $(LIBS)
 
 libvcc.a:
 	git submodule update --init --recursive
