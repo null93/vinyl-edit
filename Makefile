@@ -43,7 +43,7 @@ dist-linux-arm64:
 dist-linux-amd64:
 	docker buildx build --platform linux/amd64 --build-arg VERSION=$(VERSION) --build-arg PLATFORM=linux_amd64 -o dist/ .
 
-dist: build dist-linux-arm64 dist-linux-amd64
+dist: build dist-linux-arm64 dist-linux-amd64 dist-darwin-arm64
 
 test:
 	@BINARY=./dist/$(OUTPUT) ./tools/run-tests.sh
