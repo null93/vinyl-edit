@@ -122,6 +122,26 @@ For example, given the pattern `acl ** {***}`, `**1` captures the ACL name and `
 
 In `extract`, captures work the same way via the template argument. Running `extract 'acl ** {***}' '**2'` prints just the body of each ACL, discarding the surrounding structure.
 
+## Install
+
+**macOS (Apple Silicon):**
+```sh
+curl -sLo /usr/local/bin/vinyl-edit https://github.com/null93/vinyl-edit/releases/download/0.0.1/vinyl-edit_0.0.0_darwin_arm64
+chmod +x /usr/local/bin/vinyl-edit
+```
+
+**Linux (ARM64):**
+```sh
+curl -sLo /usr/local/bin/vinyl-edit https://github.com/null93/vinyl-edit/releases/download/0.0.1/vinyl-edit_0.0.0_linux_arm64
+chmod +x /usr/local/bin/vinyl-edit
+```
+
+**Linux (AMD64):**
+```sh
+curl -sLo /usr/local/bin/vinyl-edit https://github.com/null93/vinyl-edit/releases/download/0.0.1/vinyl-edit_0.0.0_linux_amd64
+chmod +x /usr/local/bin/vinyl-edit
+```
+
 ## Build
 
 In order to build the Vinyl Cache libraries, you will need to install the following dependencies:
